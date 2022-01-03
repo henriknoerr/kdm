@@ -9,3 +9,4 @@
 - Put the 3d piece into the bag.
 - Once you've done this for all terrain pieces you wish to replace, right-click on the "Terrain Tiles Archive" and click "Reset".
 - Drag and drop your terrain bag (containing the new 3D pieces). At this point you're done: try a showdown that has terrain to make sure your tiles are spawning.
+test
