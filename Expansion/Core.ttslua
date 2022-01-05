@@ -19,6 +19,8 @@ return {
         ["Settlement Locations"] = "Core Settlement Locations",
         ["Rare Gear"] = "Core Rare Gear",
         ["Hunt Events"] = "Core Hunt Events",
+
+        ["Patterns"] = "Core Patterns",
     },
 
     settlementEvents = {
@@ -43,6 +45,8 @@ return {
         "Clinging Mist",
         "Lights in the Sky",
         "Stranger in the Dark",
+        "Story in the Snow",  --1.6
+        "Dark Seamstress",    --1.6
     },
 
     campaigns = {
@@ -139,31 +143,35 @@ return {
     },
 
     terrain = {
-        ["2 Acanthus Plants"] = { terrainTile = "Acanthus",         count = 2 },
-        ["Bug Patch"]         = { terrainTile = "Bug Patch",        count = 1 },
-        ["Dead Monster"]      = { terrainTile = "Dead Monster",     count = 1 },
-        ["Debris"]            = { terrainTile = "Debris",           count = 1 },
-        ["Giant Stone Face"]  = { terrainTile = "Giant Stone Face", count = 1 },
-        ["Nightmare Tree"]    = { terrainTile = "Nightmare Tree",   count = 1 },
-        ["Ore Vein"]          = { terrainTile = "Ore Vein",         count = 1 },
-        ["3 Stone Columns"]   = { terrainTile = "Stone Column",     count = 3 },
-        ["Survivor Corpse"]   = { terrainTile = "Survivor Corpse",  count = 1 },
-        ["2 Tall Grass"]      = { terrainTile = "Tall Grass",       count = 2 },
-        ["Toppled Pillar"]    = { terrainTile = "Toppled Pillar",   count = 1 },
+        ["2 Acanthus Plants"]    = { terrainTile = "Acanthus",           count = 2 },
+        ["Bug Patch"]            = { terrainTile = "Bug Patch",          count = 1 },
+        ["Dead Monster"]         = { terrainTile = "Dead Monster",       count = 1 },
+        ["Debris"]               = { terrainTile = "Debris",             count = 1 },
+        ["Giant Stone Face"]     = { terrainTile = "Giant Stone Face",   count = 1 },
+        ["Nightmare Tree"]       = { terrainTile = "Nightmare Tree",     count = 1 },
+        ["Ore Vein"]             = { terrainTile = "Ore Vein",           count = 1 },
+        ["3 Stone Columns"]      = { terrainTile = "Stone Column",       count = 3 },
+        ["Survivor Corpse"]      = { terrainTile = "Survivor Corpse",    count = 1 },
+        ["2 Tall Grass"]         = { terrainTile = "Tall Grass",         count = 2 },
+        ["Toppled Pillar"]       = { terrainTile = "Toppled Pillar",     count = 1 },
+        ["Hovel"]                = { terrainTile = "Hovel",              count = 2 },
+        ["2 Cowering Survivors"] = { terrainTile = "Cowering Survivors", count = 2 },
     },
 
     terrainTileSizes  = {
-        ["Acanthus"]         = { x = 1, y = 1 },
-        ["Bug Patch"]        = { x = 1, y = 1 },
-        ["Dead Monster"]     = { x = 2, y = 2 },
-        ["Debris"]           = { x = 1, y = 1 },
-        ["Giant Stone Face"] = { x = 2, y = 3 },
-        ["Nightmare Tree"]   = { x = 3, y = 3 },
-        ["Ore Vein"]         = { x = 1, y = 1 },
-        ["Stone Column"]     = { x = 1, y = 2 },
-        ["Survivor Corpse"]  = { x = 1, y = 1 },
-        ["Tall Grass"]       = { x = 2, y = 2 },
-        ["Toppled Pillar"]   = { x = 1, y = 4 },
+        ["Acanthus"]           = { x = 1, y = 1 },
+        ["Bug Patch"]          = { x = 1, y = 1 },
+        ["Dead Monster"]       = { x = 2, y = 2 },
+        ["Debris"]             = { x = 1, y = 1 },
+        ["Giant Stone Face"]   = { x = 2, y = 3 },
+        ["Nightmare Tree"]     = { x = 3, y = 3 },
+        ["Ore Vein"]           = { x = 1, y = 1 },
+        ["Stone Column"]       = { x = 1, y = 2 },
+        ["Survivor Corpse"]    = { x = 1, y = 1 },
+        ["Tall Grass"]         = { x = 2, y = 2 },
+        ["Toppled Pillar"]     = { x = 1, y = 4 },
+        ["Hovel"]              = { x = 2, y = 2 },
+        ["Cowering Survivors"] = { x = 1, y = 1},
     },
 
     settlementLocationGear = {
@@ -265,15 +273,24 @@ return {
 
         ["Cloth"] = { head = 0, arms = 0, body = 0, waist = 1, legs = 0 },
 
-        ["Screaming Armor"]       = { head = 2, arms = 2, body = 2, waist = 2, legs = 2, modifier = true },
-        ["Screaming Horns"]       = { head = 3, arms = 0, body = 0, waist = 0, legs = 0 },
+        ["Screaming Armor"]       = { head = 1, arms = 1, body = 1, waist = 1, legs = 1, modifier = true },
+        ["Screaming Horns"]       = { head = 2, arms = 0, body = 0, waist = 0, legs = 0 },
         ["Screaming Bracers"]     = { head = 0, arms = 2, body = 0, waist = 0, legs = 0 },
         ["Screaming Coat"]        = { head = 0, arms = 0, body = 2, waist = 0, legs = 0 },
-        ["Screaming Skirt"]       = { head = 0, arms = 0, body = 0, waist = 3, legs = 0 },
+        ["Screaming Skirt"]       = { head = 0, arms = 0, body = 0, waist = 2, legs = 0 },
         ["Screaming Leg Warmers"] = { head = 0, arms = 0, body = 0, waist = 0, legs = 2 },
 
         ["Crystal Skin"] = { head = 3, arms = 3, body = 3, waist = 3, legs = 3, modifier = true },
         ["Shield Proficiency"] = { head = 1, arms = 1, body = 1, waist = 1, legs = 1, modifier = true },
+
+        ["Teeth Bikini"] = { head = 0, arms = 0, body = 0, waist = 0, legs = 0 },
+        ["Leather Bodysuit"] = { head = 0, arms = 0, body = 0, waist = 0, legs = 0 },
+        ["Lantern Brassiere"] = { head = 0, arms = 0, body = 0, waist = 0, legs = 0 },
+        ["Rawhide Corset"] = { head = 0, arms = 0, body = 0, waist = 0, legs = 0 },
+
+        ["Brave Dirndl"] = { head = 0, arms = 0, body = 1, waist = 1, legs = 0 },
+
+        
     },
 
     weaponStats = {
@@ -321,14 +338,16 @@ return {
         ["Arc Bow"] = { speed = 1, accuracy = 6, strength = 9, slow = true },
         ["Feather Shield"] = { speed = 3, accuracy = 7, strength = 0 },
         ["Hollowpoint Arrow"] = { speed = 1, accuracy = 6, strength = 11, slow = true },
-        ["Hollow Sword"] = { speed = 3, accuracy = 5, strength = 3, paired = true },
-        ["Sonic Tomahawk"] = { speed = 3, accuracy = 5, strength = 2 },
+        ["Hollow Sword"] = { speed = 2, accuracy = 5, strength = 5 },
+        ["Sonic Tomahawk"] = { speed = 3, accuracy = 5, strength = 6 },
+        ["Finger of God"] = { speed = 2, accuracy = 5, strength = 5 },
+        ["Rainbow Katana"] = { speed = 4, accuracy = 4, strength = 4 },
 
         ["Arm of the First Tree"] = { speed = 2, accuracy = 6, strength = 4 },
         ["Aya's Sword"] = { speed = 2, accuracy = 7, strength = 3 },
         ["Aya's Spear"] = { speed = 2, accuracy = 7, strength = 3 },
         ["Blood Plasma Gun"] = { speed = 0, accuracy = 4, strength = 0 },
-        ["Blood Plasma Katana"] = { speed = 9, accuracy = 6, strength = 9, sharp, devastating = 1 },
+        ["Blood Plasma Katana"] = { speed = 9, accuracy = 6, strength = 9, sharp = true, devastating = 1 },
         ["Giant Stone Face"] = { speed = 1, accuracy = 6, strength = 5, devastating = 1 },
         ["Hope Stealer"] = { speed = 2, accuracy = 6, strength = 0 },
         ["Speaker Cult Knife"] = { speed = 3, accuracy = 6, strength = 4, deadly = 1, sharp = true },
@@ -345,6 +364,12 @@ return {
         ["Steel Sword"] = { speed = 1, accuracy = 4, strength = 5, sharp = true, slow = true },
         ["Thunder Maul"] = { speed = 2, accuracy = 6, strength = 10},
         ["Twilight Sword"] = { speed = 1, accuracy = 9, strength = 9 },
+        ["Brazen Bat"] = { speed = 2, accuracy = 5, strength = 6 },
+        ["Tempered Spear"] = { speed = 2, accuracy = 5, strength = 5 },
+        ["Durendal"] = { speed = 2, accuracy = 6, strength = 9 },
+        ["Tempered Axe"] = { speed = 2, accuracy = 6, strength = 6, paired = true },
+        ["Plated Shield"] = { speed = 1, accuracy = 8, strength = 3 },
+        ["Tempered Dagger"] = { speed = 3, accuracy = 7, strength = 4, paired = true },
 
         ["Rawhide Whip"] = { speed = 3, accuracy = 7, strength = 1 },
 
@@ -352,12 +377,12 @@ return {
         ["Lance of Longinus"] = { speed = 2, accuracy = 6, strength = 9 },
 
         ["Counterweighted Axe"] = { speed = 2, accuracy = 6, strength = 4 },
-        ["Finger of God"] = { speed = 2, accuracy = 5, strength = 5 },
-        ["Rainbow Katana"] = { speed = 4, accuracy = 4, strength = 4 },
         ["Scrap Dagger"] = { speed = 3, accuracy = 7, strength = 2 },
         ["Scrap Sword"] = { speed = 2, accuracy = 5, strength = 3 },
         ["Skullcap Hammer"] = { speed = 2, accuracy = 7, strength = 3 },
         ["Zanbato"] = { speed = 1, accuracy = 6, strength = 6, slow = true, deadly = 1 },
+        ["Scrap Bone Spear"] = { speed = 2, accuracy = 6, strength = 3 },
+
     },
 
     guidNames = { ["6392cb"] = "Core Archive" },
@@ -497,6 +522,8 @@ return {
             { "White Gigalion Info", "AI" },
             { "White Gigalion Basic Action", "AI" },
             { "White Gigalion Hit Locations", "Hit Locations" },
+
+            { "Core Patterns", "Patterns" },
         },
     },
 
