@@ -64,7 +64,7 @@ function Campaign.InitCampaignUi()
     local panel = Ui.Get2d():Panel({ id = "Campaign", rectAlignment = "MiddleCenter", x = 0, y = 0, width = 885, height = 723, active = false })
     Campaign.panel = panel
     panel:Image({ id = "Campaign", image = "Campaign", x = 0, y = 0, width = 885, height = 723 })
-    panel:Button({ id = "Close", x = 845, y = -10, width = 30, height = 30, onClick = Campaign.HideUi })
+    panel:Button({ id = "Close", x = 845, y = -10, width = 30, height = 30, onClick = function(mouseButton, player) Campaign.HideUi(player) end })
     Campaign.selectedCampaign = Campaign.campaigns[1]
     local x = 128
     local y = -125
@@ -328,7 +328,7 @@ function Campaign.ImportFromCampaign()
         return
     end
 
-    Campaign.HideUi()
+    Campaign.HideUiForAll()
 
     local expansions = { Campaign.expansionsByName["Core"] }
     for expansionName, enabled in pairs(Campaign.selectedExpansionsNyName) do
@@ -836,16 +836,33 @@ end
 
 ---------------------------------------------------------------------------------------------------
 
-function Campaign.ShowUi()
-    log:Debugf("Showing Campaign UI")
-    Campaign.panel:Show()
-    Campaign.uiOpen = true
+function Campaign.ShowUi(player)
+    log:Debugf("Showing Campaign UI for " .. player.steam_name)
+
+    str = Campaign.panel:ShowForPlayer(player.color)
+
+    if str == player.color then
+      Campaign.uiOpen = true
+    else
+        log:Errorf(str .. " is already looking at the Campaign UI", player.steam_name, player.color)
+    end
 end
 
 ---------------------------------------------------------------------------------------------------
 
-function Campaign.HideUi()
-    log:Debugf("Hiding Campaign UI")
+function Campaign.HideUi(player)
+    log:Debugf("Hiding Campaign UI for " .. player.steam_name)
+
+  str = Campaign.panel:HideForPlayer(player.color)
+
+  if str == "None" or str == player.color then
+    Campaign.uiOpen = false
+  else
+      log:Errorf(str .. " is already looking at the Campaign UI", player.steam_name, player.color)
+  end
+end
+
+function Campaign.HideUiForAll()
     Campaign.panel:Hide()
     Campaign.uiOpen = false
 end
