@@ -73,7 +73,7 @@ return {
             },
             survivalActions = {
                 { name = "Dodge", checked = true },
-                { name = "Encourage" },
+                { name = "Encourage", checked = true },
                 { name = "Dash" },
                 { name = "Surge" },
                 { name = "Endure" },
