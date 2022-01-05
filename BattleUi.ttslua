@@ -221,7 +221,10 @@ function BattleUi.CalcWeapons(player, survivor)
 
         local hit = Util.Clamp(accuracy + monsterEvasion, 2, 10)
         local wound = Util.Max(monsterToughness - strength, 2)    -- sharp weapons means we need to show the target roll if it's past 10
-        local crit = Util.Clamp(10 - luck + monsterLuck, 2, 10)
+        local crit = Util.Clamp(10 - luck + monsterLuck, 2, 11)
+        if crit == 11 then
+          crit = 'X'
+        end
 
         if weapon.paired and weaponCounts[weapon.name] > 1 then
             speed = speed + weapon.speed
