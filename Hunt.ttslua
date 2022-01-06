@@ -19,29 +19,31 @@ function Hunt.Init()
     Hunt.monstersByMonsterName = {}
     Hunt.levelsByMonsterLevelName = {}
     for _, expansion in ipairs(Expansion.All()) do
-        for _, monster in ipairs(expansion.monsters or {}) do
-            Hunt.monstersByMonsterName[monster.name] = monster
-            if monster.huntTrack then
-                local levels = {}
-                for _, level in ipairs(monster.levels) do
-                    if level.monsterHuntPosition then
-                        table.insert(levels, level)
+        if Expansion.IsEnabled(expansion.name) then
+            for _, monster in ipairs(expansion.monsters or {}) do
+                Hunt.monstersByMonsterName[monster.name] = monster
+                if monster.huntTrack then
+                    local levels = {}
+                    for _, level in ipairs(monster.levels) do
+                        if level.monsterHuntPosition then
+                            table.insert(levels, level)
+                        end
+                        Hunt.levelsByMonsterLevelName[monster.name..level.name] = level
                     end
-                    Hunt.levelsByMonsterLevelName[monster.name..level.name] = level
+                    local huntSetup = {
+                        name = monster.name,
+                        huntTrack = monster.huntTrack,
+                        huntEventsDeck = monster.huntEventsDeck or monster.name.." Hunt Events",
+                        levels = levels,
+                        levelMap = levelMap,
+                    }
+                    if monster.resourcesDeck != false then
+                        huntSetup.resourcesDeck = monster.resourcesDeck or monster.name.." Resources"
+                    end
+                    table.insert(Hunt.monsters, huntSetup)
+                    Hunt.expansionsByMonsterName[monster.name] = expansion
                 end
-                local huntSetup = {
-                    name = monster.name,
-                    huntTrack = monster.huntTrack,
-                    huntEventsDeck = monster.huntEventsDeck or monster.name.." Hunt Events",
-                    levels = levels,
-                    levelMap = levelMap,
-                }
-                if monster.resourcesDeck != false then
-                    huntSetup.resourcesDeck = monster.resourcesDeck or monster.name.." Resources"
-                end
-                table.insert(Hunt.monsters, huntSetup)
-                Hunt.expansionsByMonsterName[monster.name] = expansion
-            end
+            end        
         end
     end
     table.sort(Hunt.monsters, function(x, y) return x.name < y.name end)
