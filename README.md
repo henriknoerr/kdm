@@ -1,5 +1,12 @@
 # kdm-tts
-Source for my Kingdom Death: Monster mod for Tabletop Simulator (https://steamcommunity.com/sharedfiles/filedetails/?id=2112101994)
+Source for my Kingdom Death: Monster mod for Tabletop Simulator
+
+based on work by Jordan Chavez (https://steamcommunity.com/sharedfiles/filedetails/?id=2112101994)
+besides his mod, I have integrated various fixes from;
+https://github.com/Farbod678/kdm-tts
+https://github.com/Vateke/kdm-tts
+https://github.com/ScottMahoney/kdm-tts
+
 
 # Version 1.2
 * Fixed Gloom-Coated Arrow not showing up in Battle UI
