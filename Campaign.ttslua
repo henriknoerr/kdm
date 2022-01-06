@@ -345,7 +345,7 @@ function Campaign.ImportFromCampaign()
         local playerPrefix = "Player "..ordinal
         objectsByLocation[playerPrefix.." Fist & Tooth"] = { tag = "Card", name = "Fist & Tooth", type = "Gear" }
         objectsByLocation[playerPrefix.." Gear 1"] = { tag = "Card", name = "Founding Stone", type = "Gear" }
-        objectsByLocation[playerPrefix.." Gear 2"] = { tag = "Card", name = "Cloth",  type = "Gear" }
+        objectsByLocation[playerPrefix.." Gear 5"] = { tag = "Card", name = "Cloth",  type = "Gear" }
     end
 
     Campaign.Import({
