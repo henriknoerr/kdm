@@ -1210,7 +1210,7 @@ function SurvivorClass.Create(params)
         skipNextHunt = params.skipNextHunt,
         retired = params.retired,
         dead = params.dead,
-        survival = params.survival or 0,
+        survival = params.survival or 1, -- changed from 0 to 1 - lets just assume name is given just after creation :)
         movement = params.movement or 5,
         speed = params.speed or 0,
         accuracy = params.accuracy or 0,
